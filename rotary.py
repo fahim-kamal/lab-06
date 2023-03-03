@@ -15,6 +15,5 @@ class RotarySensor():
         sensor_value = analogRead(self.port)
         voltage = sensor_value * self.ADC_REF / 1023
         degrees = (voltage * self.FULL_ANGLE) / self.GROVE_VCC
-        print(sensor_value, degrees)
         return round(degrees)
 

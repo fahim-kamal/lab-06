@@ -22,10 +22,13 @@ def getData(US_PIN, sensor: RotarySensor):
     return result
 
 def display(result: data):
-    line1 = " {}cm ".format(result.threshold)
+    setRGB(124, 242, 0) # Green
+
+    line1 = " {}cm".format(result.threshold)
     line2 = " {}cm".format(result.distance)
 
     if result.distance <= result.threshold:
+        setRGB(255, 0, 0) # Red
         line1 = line1 + " OBJ PRES"
 
     line1 = line1.ljust(16)
@@ -37,8 +40,6 @@ def display(result: data):
 if __name__ == "__main__":
     rs = RotarySensor(0)
 
-    # Green: rgb(124, 252, 0)
-    setRGB(124, 242, 0) 
     while True:
         res = getData(2, rs)
         display(res)
