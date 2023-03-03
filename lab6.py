@@ -27,9 +27,9 @@ def display(result: data):
     line1.ljust(16)
     line2.ljust(16)
 
-    print(line1 + line2)
+    print("".join([line1, line2]))
 
-    setText(line1 + line2)
+    setText("".join([line1, line2]))
 
 
 if __name__ == "__main__":
