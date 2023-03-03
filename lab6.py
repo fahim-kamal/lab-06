@@ -24,8 +24,8 @@ def display(result: data):
     line1 = " {}cm ".format(result.threshold)
     line2 = " {}cm".format(result.distance)
 
-    line1.ljust(" ", 16)
-    line2.ljust(" ", 16)
+    line1.ljust(16)
+    line2.ljust(16)
 
     setText(line1 + line2)
 
