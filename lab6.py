@@ -3,6 +3,8 @@ from grovepi import *
 from rotary import RotarySensor
 import time
 
+ROTARY_PIN = 0
+
 class data:
     def __init__(self, threshold, distance):
         self.threshold = threshold
@@ -22,14 +24,15 @@ def getData(US_PIN, sensor: RotarySensor):
     return result
 
 def display(result: data):
-    setRGB(124, 242, 0) # Green
-
     line1 = " {}cm".format(result.threshold)
     line2 = " {}cm".format(result.distance)
 
     if result.distance >= result.threshold:
         setRGB(255, 0, 0) # Red
         line1 = line1 + " OBJ PRES"
+    else:
+        setRGB(124, 242, 0) # Green
+        
 
     line1 = line1.ljust(16)
     line2 = line2.ljust(16)
@@ -38,12 +41,16 @@ def display(result: data):
 
 
 if __name__ == "__main__":
-    rs = RotarySensor(0)
+    rs = RotarySensor(ROTARY_PIN)
+
+    res = getData(2, rs)
+    display(res)
 
     while True:
-        res = getData(2, rs)
-        display(res)
-        time.sleep(.01)
+        if(is_interrupt_active(ROTARY_PIN)):
+            res = getData(2, rs)
+            display(res)
+
 
 
 
