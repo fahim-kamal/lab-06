@@ -24,11 +24,11 @@ def display(result: data):
     line1 = " {}cm ".format(result.threshold)
     line2 = " {}cm".format(result.distance)
 
+    if result.distance <= result.threshold:
+        line1 = line1 + " OBJ PRES"
 
     line1 = line1.ljust(16)
     line2 = line2.ljust(16)
-
-    print(line1 + line2)
 
     setText(line1 + line2)
 
