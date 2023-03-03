@@ -43,13 +43,10 @@ def display(result: data):
 if __name__ == "__main__":
     rs = RotarySensor(ROTARY_PIN)
 
-    res = getData(2, rs)
-    display(res)
-
     while True:
-        if(read_interrupt_state(ROTARY_PIN) == True):
             res = getData(2, rs)
             display(res)
+            time.sleep(1)
 
 
 
