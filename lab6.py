@@ -27,6 +27,8 @@ def display(result: data):
     line1.ljust(16)
     line2.ljust(16)
 
+    print(line1 + line2)
+
     setText(line1 + line2)
 
 
