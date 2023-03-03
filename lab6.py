@@ -27,7 +27,7 @@ def display(result: data):
     line1 = " {}cm".format(result.threshold)
     line2 = " {}cm".format(result.distance)
 
-    if result.distance <= result.threshold:
+    if result.distance >= result.threshold:
         setRGB(255, 0, 0) # Red
         line1 = line1 + " OBJ PRES"
 
