@@ -43,7 +43,7 @@ if __name__ == "__main__":
     while True:
         res = getData(2, rs)
         display(res)
-        time.sleep(1)
+        time.sleep(.01)
 
 
 
