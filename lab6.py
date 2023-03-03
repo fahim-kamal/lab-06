@@ -35,7 +35,7 @@ def display(result: data):
 
 
 if __name__ == "__main__":
-    rs = RotarySensor(1)
+    rs = RotarySensor(0)
 
     # Green: rgb(124, 252, 0)
     setRGB(124, 242, 0)
