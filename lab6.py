@@ -15,7 +15,7 @@ def getData(US_PIN, sensor: RotarySensor):
     distance_cm = ultrasonicRead(US_PIN)
 
     # Convert data to suitable format
-    threshold_cm = round(517 / angle)
+    threshold_cm = round((517 / 300) * angle)
 
     result = data(threshold_cm, distance_cm)
 
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     rs = RotarySensor(0)
 
     # Green: rgb(124, 252, 0)
-    setRGB(124, 242, 0)
+    setRGB(124, 242, 0) 
     while True:
         res = getData(2, rs)
         display(res)
