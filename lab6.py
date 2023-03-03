@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
     # Green: rgb(124, 252, 0)
     setRGB(124, 242, 0)
-    display()
+    display(res)
 
 
 
