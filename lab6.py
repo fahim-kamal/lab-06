@@ -47,7 +47,7 @@ if __name__ == "__main__":
     display(res)
 
     while True:
-        if(read_interrupt_active(ROTARY_PIN) == True):
+        if(read_interrupt_state(ROTARY_PIN) == True):
             res = getData(2, rs)
             display(res)
 
