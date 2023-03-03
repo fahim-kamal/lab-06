@@ -1,6 +1,7 @@
 from grove_rgb_lcd import *
 from grovepi import *
 from rotary import RotarySensor
+import time
 
 class data:
     def __init__(self, threshold, distance):
@@ -35,11 +36,13 @@ def display(result: data):
 
 if __name__ == "__main__":
     rs = RotarySensor(1)
-    res = getData(2, rs)
 
     # Green: rgb(124, 252, 0)
     setRGB(124, 242, 0)
-    display(res)
+    while True:
+        res = getData(2, rs)
+        display(res)
+        time.sleep(1)
 
 
 
