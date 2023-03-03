@@ -9,7 +9,7 @@ class RotarySensor():
         self.FULL_ANGLE = 300
     
         pinMode(self.port, "INPUT")
-        set_pin_interrupt(self.port, COUNT_CHANGES, CHANGE, 50)
+        set_pin_interrupt(self.port, COUNT_CHANGES, CHANGE, 500)
 
         time.sleep(1)
 
