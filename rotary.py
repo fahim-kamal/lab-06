@@ -20,7 +20,7 @@ class RotarySensor():
     def test(self):
         PORTC = 0x08
 
-        result = read_i2c_byte(PORTC)
+        result = read_i2c_block(PORTC)
         print(result)
 
 
