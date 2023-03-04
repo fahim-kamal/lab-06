@@ -9,8 +9,6 @@ class RotarySensor():
         self.FULL_ANGLE = 300
     
         pinMode(self.port, "INPUT")
-        set_pin_interrupt(self.port, COUNT_CHANGES, CHANGE, 500)
-
         time.sleep(1)
 
     def read(self):
@@ -18,4 +16,13 @@ class RotarySensor():
         voltage = sensor_value * self.ADC_REF / 1023
         degrees = (voltage * self.FULL_ANGLE) / self.GROVE_VCC
         return round(degrees)
+    
+    def test(self, port):
+        PORTC = 0x08
+
+        result = read_i2c_byte(PORTC)
+        print(result)
+
+
+
 
