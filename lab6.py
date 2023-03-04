@@ -39,12 +39,11 @@ def display(result: data):
 
     setText(line1 + line2)
 
-def setInterrupts():
-     
 
 
 if __name__ == "__main__":
     rs = RotarySensor(ROTARY_PIN)
+    rs.test()
 
     while True:
             res = getData(2, rs)
