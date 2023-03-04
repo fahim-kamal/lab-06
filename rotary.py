@@ -17,11 +17,6 @@ class RotarySensor():
         degrees = (voltage * self.FULL_ANGLE) / self.GROVE_VCC
         return round(degrees)
     
-    def test(self):
-        PORTC = 0x08
-
-        result = read_i2c_block(PORTC, 1)
-        print(result)
 
 
 

@@ -43,7 +43,6 @@ def display(result: data):
 
 if __name__ == "__main__":
     rs = RotarySensor(ROTARY_PIN)
-    rs.test()
 
     while True:
             res = getData(2, rs)
