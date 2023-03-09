@@ -37,7 +37,7 @@ def display(result: data):
     line1 = line1.ljust(16)
     line2 = line2.ljust(16)
 
-    setText(line1 + line2)
+    setText_norefresh(line1 + line2)
 
 
 
